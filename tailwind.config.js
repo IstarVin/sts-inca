@@ -7,6 +7,12 @@ export default {
     theme: {
         extend: {},
     },
-    plugins: [],
+    plugins: [function ({ addVariant }) {
+        addVariant('current', '& [aria-current="page"]');
+        addVariant('currenthover', ['& [aria-current="page"]', '& :hover']);
+        addVariant('afterbefore', ['&:after', '&:before']);
+        addVariant('curafthov', ['&[aria-current="page"]', '&:hover']);
+        addVariant('paragraph', '& p');
+    }],
 }
 

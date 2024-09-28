@@ -5,7 +5,22 @@ export default {
         "./src/**/*.{svelte,js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                albertsans: ["'Albert Sans'", "sans-serif"],
+                robotoslab: ["'Roboto Slab'", "serif"],
+                primary: ["'Chakra Petch'", "sans-serif"],
+                secondary: ["'Mulish'", "sans-serif"],
+            },
+            colors: {
+                primary: '#D16527',
+                secondary: '#121212',
+                bgcolor: '#F6E8D4',
+                text: '#161616',
+                accent: '#242424',
+                textColor: '#EDEDED'
+            }
+        },
     },
     plugins: [function ({ addVariant }) {
         addVariant('current', '& [aria-current="page"]');

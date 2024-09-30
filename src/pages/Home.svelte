@@ -1,1 +1,7 @@
-<h1>Home</h1>
+<script>
+    import Slideshow from "../lib/home/Slideshow.svelte";
+</script>
+
+<div>
+    <Slideshow />
+</div>

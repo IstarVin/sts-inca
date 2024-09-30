@@ -1,16 +1,22 @@
 <script>
+    import Government from "./pages/Government.svelte";
+    import Architecture from "./pages/Architecture.svelte";
     import Home from "./pages/Home.svelte";
-    import About from "./pages/About.svelte";
     import History from "./pages/History.svelte";
     import Culture from "./pages/Culture.svelte";
     import Header from "./lib/Header.svelte";
-    import { Router, Link, Route } from "svelte-routing";
+    import Background from "./lib/Background.svelte";
+    import { Router, Route } from "svelte-routing";
 </script>
 
+<Background />
 <Router>
     <Header />
-    <Route path="/" component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/history" component={History} />
-    <Route path="/culture" component={Culture} />
+    <main class="mt-28">
+        <Route path="/" component={Home} />
+        <Route path="/architecture" component={Architecture} />
+        <Route path="/culture" component={Culture} />
+        <Route path="/government" component={Government} />
+        <Route path="/history" component={History} />
+    </main>
 </Router>

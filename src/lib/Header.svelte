@@ -2,15 +2,17 @@
     import { Link } from "svelte-routing";
     import sun from "../assets/sun.svg";
     let routes = [
-        { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "-image-", href: "/" },
-        { name: "History", href: "/history" },
+        { name: "Architecture", href: "/architecture" },
         { name: "Culture", href: "/culture" },
+        { name: "-image-", href: "/" },
+        { name: "Government", href: "/government" },
+        { name: "History", href: "/history" },
     ];
 </script>
 
-<nav class="fixed w-full h-24 flex justify-center items-center">
+<nav
+    class="fixed top-0 w-full h-24 mt-2 flex justify-center items-center font-medium z-50"
+>
     {#each routes as route}
         {#if route.name != "-image-"}
             <Link to={route.href} class="text-lg mx-7 curafthov:text-sky-500">

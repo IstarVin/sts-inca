@@ -1,6 +1,7 @@
 <script>
     import Carousel from "svelte-carousel";
     import Slides from "./Slides.svelte";
+    import { Card, Button } from "flowbite-svelte";
 
     import intro from "../../assets/home/slideshows/intro.png";
     import gov from "../../assets/home/slideshows/gov.png";
@@ -37,7 +38,19 @@
         particlesToScroll={0}
     >
         {#each slides as { name, image }}
-            <Slides {name} {image} />
+            <div class="mx-4">
+                <Card img={image} class="bg-primary-100 border-primary-100">
+                    <div class="flex flex-col items-center">
+                        <h5
+                            class="mb-2 text-xl font-bold tracking-tight text-gray-800 dark:text-white"
+                        >
+                            {name}
+                        </h5>
+                        <Button>Learn More</Button>
+                    </div>
+                </Card>
+            </div>
+            <!-- <Slides {name} {image} /> -->
         {/each}
     </Carousel>
 </div>

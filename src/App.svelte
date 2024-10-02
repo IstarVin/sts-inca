@@ -12,7 +12,7 @@
 <Background />
 <Router>
     <Header />
-    <main class="mt-28">
+    <main class="font-albertsans">
         <Route path="/" component={Home} />
         <Route path="/architecture" component={Architecture} />
         <Route path="/culture" component={Culture} />

@@ -2,9 +2,18 @@
     import Slideshow from "../lib/home/Slideshow.svelte";
     import bg from "../assets/home/bg.jpg";
     import about from "../assets/home/About Title.png";
-    import { Accordion, AccordionItem, Button, Card } from "flowbite-svelte";
+    import {
+        Accordion,
+        AccordionItem,
+        Button,
+        Card,
+        Carousel,
+    } from "flowbite-svelte";
     import Footer from "../lib/Footer.svelte";
     import { headerBg } from "../stores/header";
+    import image1 from "../assets/home/Image 1.png";
+    import image2 from "../assets/home/Image 2.png";
+    import image3 from "../assets/home/Image 3.png";
     function scrollToBottom() {
         window.scrollTo({
             top: window.innerHeight - 96, // 100% of viewport height
@@ -12,6 +21,24 @@
         });
     }
     $headerBg = "#FFF4EB";
+
+    let images = [
+        {
+            alt: "urpu",
+            src: image1,
+            title: "Urpu",
+        },
+        {
+            alt: "qeros",
+            src: image2,
+            title: "Qeros",
+        },
+        {
+            alt: "pacchas",
+            src: image3,
+            title: "Pacchas",
+        },
+    ];
 </script>
 
 <img src={bg} alt="bg" class="w-full h-[100vh] object-cover object-center" />
@@ -53,11 +80,13 @@
     </div>
     <hr class="border-t border-primary-700 my-10" />
     <div class="text-black">
-        <h1 class="text-6xl">The Art of Incas</h1>
+        <h1 class="text-6xl font-labrada" style="letter-spacing: -4px;">
+            The Art of Incas
+        </h1>
         <div class="bg-primary-100 m-16 rounded-xl">
-            <div class="flex p-10">
+            <div class="flex p-10 font-familjen text-2xl">
                 <!-- <div class="flex flex-col"> -->
-                <Accordion class="w-1/2">
+                <Accordion class="w-3/4">
                     <AccordionItem
                         open
                         classActive="bg-inherit"
@@ -71,7 +100,6 @@
                         </p>
                     </AccordionItem>
                     <AccordionItem
-                        open
                         classActive="bg-inherit"
                         inactiveClass="hover:bg-inherit"
                     >
@@ -83,7 +111,6 @@
                         </p>
                     </AccordionItem>
                     <AccordionItem
-                        open
                         classActive="bg-inherit"
                         inactiveClass="hover:bg-inherit"
                     >
@@ -95,6 +122,11 @@
                         </p>
                     </AccordionItem>
                 </Accordion>
+                <div class="w-1/2">
+                    <Carousel {images} let:Controls duration={3000}>
+                        <Controls />
+                    </Carousel>
+                </div>
                 <!-- </div> -->
             </div>
         </div>
@@ -109,8 +141,9 @@
     </h1>
     <Slideshow />
 </div>
-<div class="my-10"></div>
+<!-- <div class="my-20"></div> -->
 
+<hr class="border-t border-primary-700 my-10 mx-10" />
 <Footer
     textColor={"#F8C09E"}
     bgColor={"#FF914D"}

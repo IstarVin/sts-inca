@@ -2,9 +2,7 @@
     import { Link } from "svelte-routing";
     import { onMount } from "svelte";
     import sun from "../assets/sun.svg";
-    import { headerBg, hideHeader } from "../stores/header";
-    import a from "../assets/background/a.svg";
-    import b from "../assets/background/b.svg";
+    import { headerBg, hideHeader, textColor } from "../stores/header";
 
     let routes = [
         { name: "Architecture", href: "/architecture" },
@@ -33,10 +31,9 @@
 <nav
     class="fixed top-0 w-full h-24 flex justify-center items-center font-medium z-50 transition-colors duration-500 ease-in-out
     {$hideHeader ? 'hidden' : ''}"
-    style="background-color: {isScrolled ? $headerBg : ''};"
+    style="background-color: {isScrolled ? $headerBg : ''};
+    color: {!isScrolled ? $textColor : ''}"
 >
-    <!-- <img src={a} alt="a" class="absolute top-0 right-0 -z-40" /> -->
-    <!-- <img src={b} alt="b" class="absolute top-0 left-0 m-2 -z-40" /> -->
     {#each routes as route}
         {#if route.name != "-image-"}
             <Link

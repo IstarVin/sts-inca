@@ -12,7 +12,10 @@ export default {
                 labrada: ["'Labrada'", "sans-serif"],
                 abel: ["'Abel'", "sans-serif"],
                 familjen: ["'Familjen Grotesk'", "sans-serif"],
+                marko: ["'Marko One'", "serif"],
+                khand: ["Khand", "sans-serif"],
                 primary: ["'Inknut Antiqua'", "serif"],
+
                 // primary: ["sans-serif"],
                 secondary: ["'Mulish'", "sans-serif"],
             },

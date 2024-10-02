@@ -25,7 +25,7 @@
         <h1 class="uppercase font-bold">Back</h1>
     </div>
 </Link>
-<div class="mx-10 xl:mx-[10vw] 2xl:mx-[20vw] mb-12 font-roboto">
+<div class="mx-10 xl:mx-[10vw] 2xl:mx-[15vw] mb-12 font-roboto">
     <div class="w-full h-16" style="background-color: #E5E7EB;"></div>
     <div class="my-6"></div>
     <div

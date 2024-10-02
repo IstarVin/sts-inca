@@ -1,5 +1,5 @@
 <script>
-    import { headerBg } from "../stores/header";
+    import { headerBg, textColor } from "../stores/header";
     import machu from "../assets/acrhitecture/Macchu Pichu Frame.png";
     import mason from "../assets/acrhitecture/mason.png";
     import road from "../assets/acrhitecture/road.png";
@@ -8,16 +8,34 @@
     import { onMount, onDestroy } from "svelte";
     import { archY } from "../stores/architecture";
     import { Link } from "svelte-routing";
+    import navBar from "../assets/acrhitecture/Navigation Bar.png";
 
     $headerBg = "#F1F1F1";
+    onMount(() => {
+        $textColor = "#F1F1F1";
+        return () => ($textColor = "#000000");
+    });
     onDestroy(() => ($archY = window.scrollY));
     onMount(() => scrollTo(0, $archY));
 </script>
 
+<img
+    src={navBar}
+    alt="art"
+    class="w-full h-[100vh] object-cover object-bottom"
+/>
+<div
+    class="w-full h-[100vh] absolute top-0 bg-black bg-opacity-45"
+    style="clip-path: polygon(0 0, 100% 0, 0 100%);"
+></div>
+<div class="w-full h-full absolute top-0 flex justify-center items-center">
+    <h1 class="font-labrada text-white text-9xl font-bold">
+        Inca Architecture
+    </h1>
+</div>
 <div
     class="flex flex-col items-center mx-16 xl:mx-[10vw] 2xl:mx-[20vw] font-roboto"
 >
-    <div class="bg-gray-200 w-full h-32 mt-32 mb-16"></div>
     <div class="flex items-center gap-10 h-[60vh]">
         <div class="flex-1 flex flex-col w-[50%]">
             <hr class="border-t border-gray-300 my-6 mx-4" />
@@ -66,7 +84,7 @@
         name="Inca Road System"
         desc="The Inca road system connected cities and temples across thousands of miles, enabling the civilization to thrive in the Andes—an engineering marvel achieved without the wheel or modern tools...."
         bgImg={road}
-        to="/"
+        to="/roadsystems"
         reverse
     />
     <div class="my-10"></div>

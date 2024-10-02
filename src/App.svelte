@@ -9,6 +9,7 @@
     import { Router, Route } from "svelte-routing";
     import Mason from "./pages/architecture/Mason.svelte";
     import LostCity from "./pages/architecture/LostCity.svelte";
+    import RoadSystems from "./pages/architecture/RoadSystems.svelte";
 </script>
 
 <Background />
@@ -22,5 +23,6 @@
         <Route path="/history" component={History} />
         <Route path="/mason" component={Mason} />
         <Route path="/lostcity" component={LostCity} />
+        <Route path="/roadsystems" component={RoadSystems} />
     </main>
 </Router>

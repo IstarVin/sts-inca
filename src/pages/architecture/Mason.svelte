@@ -8,6 +8,7 @@
     import arch2 from "../../assets/acrhitecture/arch2.png";
     import arch3 from "../../assets/acrhitecture/arch3.png";
     import arch4 from "../../assets/acrhitecture/arch4.png";
+    import youtubeIcon from "../../assets/acrhitecture/youtube.png";
 
     let images = [arch1, arch2, arch3, arch4];
     onMount(() => {
@@ -138,7 +139,10 @@
                         This is How They Built the Inca Stone Walls | Ancient
                         Architects
                     </h1>
-                    <h1 class="text-gray-600">Youtube</h1>
+                    <div class="flex gap-2">
+                        <img src={youtubeIcon} alt="" class="size-6" />
+                        <h1 class="text-gray-600">Youtube</h1>
+                    </div>
                 </div>
             </div>
             <h1 class="mx-auto text-lg">Courtesy of Ancient Architects</h1>
@@ -179,7 +183,10 @@
                     >
                         Machu Picchu 101 | National Geographic
                     </h1>
-                    <h1 class="text-gray-600">Youtube</h1>
+                    <div class="flex gap-2">
+                        <img src={youtubeIcon} alt="" class="size-6" />
+                        <h1 class="text-gray-600">Youtube</h1>
+                    </div>
                 </div>
             </div>
             <h1 class="mx-auto text-lg">Courtesy of Natural Geographic</h1>

@@ -8,17 +8,19 @@
     import Background from "./lib/Background.svelte";
     import { Router, Route } from "svelte-routing";
     import Mason from "./pages/architecture/Mason.svelte";
+    import LostCity from "./pages/architecture/LostCity.svelte";
 </script>
 
 <Background />
 <Router>
     <Header />
-    <main class="font-albertsans">
+    <main class="font-roboto">
         <Route path="/" component={Home} />
         <Route path="/architecture" component={Architecture} />
         <Route path="/culture" component={Culture} />
         <Route path="/government" component={Government} />
         <Route path="/history" component={History} />
         <Route path="/mason" component={Mason} />
+        <Route path="/lostcity" component={LostCity} />
     </main>
 </Router>

@@ -7,8 +7,9 @@
     import Footer from "../lib/Footer.svelte";
     import { onMount, onDestroy } from "svelte";
     import { archY } from "../stores/architecture";
+    import { Link } from "svelte-routing";
 
-    $headerBg = "#FFF4EB";
+    $headerBg = "#F1F1F1";
     onDestroy(() => ($archY = window.scrollY));
     onMount(() => scrollTo(0, $archY));
 </script>
@@ -37,7 +38,9 @@
             </p>
             <hr class="border-t border-gray-300 my-6 mx-4" />
         </div>
-        <img src={machu} alt="" class="flex-1 p-6" />
+        <Link to="/lostcity">
+            <img src={machu} alt="" class="flex-1 p-6" />
+        </Link>
         <!-- <div class="w-max h-[60vh] bg-[#989694] rounded-[15%]"> -->
         <!-- <div class="relative -top-[25vh] ml-10 flex items-end"> -->
         <!-- <h1 class="text-white text-8xl font-labrada font-bold"> -->

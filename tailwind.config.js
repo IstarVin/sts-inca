@@ -35,6 +35,9 @@ export default {
                 text: '#161616',
                 accent: '#242424',
                 textColor: '#EDEDED'
+            },
+            screens: {
+                '3xl': '1900px'
             }
         },
     },

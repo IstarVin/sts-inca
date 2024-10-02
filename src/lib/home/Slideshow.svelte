@@ -46,7 +46,7 @@
                         >
                             {name}
                         </h5>
-                        <Button>Learn More</Button>
+                        <Button class="font-abel">Learn More</Button>
                     </div>
                 </Card>
             </div>

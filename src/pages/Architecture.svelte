@@ -5,11 +5,17 @@
     import road from "../assets/acrhitecture/road.png";
     import Frame from "../lib/architecure/Frame.svelte";
     import Footer from "../lib/Footer.svelte";
+    import { onMount, onDestroy } from "svelte";
+    import { archY } from "../stores/architecture";
 
     $headerBg = "#FFF4EB";
+    onDestroy(() => ($archY = window.scrollY));
+    onMount(() => scrollTo(0, $archY));
 </script>
 
-<div class="flex flex-col items-center mx-[20vw] font-roboto">
+<div
+    class="flex flex-col items-center mx-16 xl:mx-[10vw] 2xl:mx-[20vw] font-roboto"
+>
     <div class="bg-gray-200 w-full h-32 mt-32 mb-16"></div>
     <div class="flex items-center gap-10 h-[60vh]">
         <div class="flex-1 flex flex-col w-[50%]">
@@ -50,7 +56,7 @@
         name="Master Stone Mason"
         desc="The Incas constructed large buildings, walls and fortifications using finely worked blocks either regular or polygonal which fitted together so precisely no mortar was needed..."
         bgImg={mason}
-        to="/"
+        to="/mason"
     />
     <div class="my-10"></div>
     <Frame

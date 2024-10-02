@@ -2,7 +2,7 @@
     import { Link } from "svelte-routing";
     import { onMount } from "svelte";
     import sun from "../assets/sun.svg";
-    import { headerBg } from "../stores/header";
+    import { headerBg, hideHeader } from "../stores/header";
     import a from "../assets/background/a.svg";
     import b from "../assets/background/b.svg";
 
@@ -32,7 +32,7 @@
 
 <nav
     class="fixed top-0 w-full h-24 flex justify-center items-center font-medium z-50 transition-colors duration-500 ease-in-out
-    "
+    {$hideHeader ? 'hidden' : ''}"
     style="background-color: {isScrolled ? $headerBg : ''};"
 >
     <!-- <img src={a} alt="a" class="absolute top-0 right-0 -z-40" /> -->

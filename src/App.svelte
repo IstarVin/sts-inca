@@ -7,6 +7,7 @@
     import Header from "./lib/Header.svelte";
     import Background from "./lib/Background.svelte";
     import { Router, Route } from "svelte-routing";
+    import Mason from "./pages/architecture/Mason.svelte";
 </script>
 
 <Background />
@@ -18,5 +19,6 @@
         <Route path="/culture" component={Culture} />
         <Route path="/government" component={Government} />
         <Route path="/history" component={History} />
+        <Route path="/mason" component={Mason} />
     </main>
 </Router>

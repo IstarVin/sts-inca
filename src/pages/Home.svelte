@@ -14,6 +14,9 @@
     import image1 from "../assets/home/Image 1.png";
     import image2 from "../assets/home/Image 2.png";
     import image3 from "../assets/home/Image 3.png";
+    import textile1 from "../assets/home/textile1.png";
+    import textile2 from "../assets/home/textile2.png";
+    import textile3 from "../assets/home/textile3.png";
     function scrollToBottom() {
         window.scrollTo({
             top: window.innerHeight - 96, // 100% of viewport height
@@ -22,7 +25,7 @@
     }
     $headerBg = "#FFF4EB";
 
-    let images = [
+    let ceramicImages = [
         {
             alt: "urpu",
             src: image1,
@@ -39,6 +42,58 @@
             title: "Pacchas",
         },
     ];
+    let metalworkImages = [
+        {
+            alt: "urpu",
+            src: image1,
+            title: "Urpu",
+        },
+        {
+            alt: "qeros",
+            src: image2,
+            title: "Qeros",
+        },
+        {
+            alt: "pacchas",
+            src: image3,
+            title: "Pacchas",
+        },
+    ];
+    let textileImages = [
+        {
+            alt: "urpu",
+            src: textile1,
+            title: "Urpu",
+        },
+        {
+            alt: "qeros",
+            src: textile2,
+            title: "Qeros",
+        },
+        {
+            alt: "pacchas",
+            src: textile3,
+            title: "Pacchas",
+        },
+    ];
+
+    let images = ceramicImages;
+
+    let ceramicOpen = true;
+    let metalworkOpen = false;
+    let textilesOpen = false;
+
+    function changeItem() {
+        if (ceramicOpen) {
+            images = ceramicImages;
+        }
+        if (metalworkOpen) {
+            images = metalworkImages;
+        }
+        if (textilesOpen) {
+            images = textileImages;
+        }
+    }
 </script>
 
 <img src={bg} alt="bg" class="w-full h-[100vh] object-cover object-center" />
@@ -85,43 +140,48 @@
         </h1>
         <div class="bg-primary-100 m-16 rounded-xl">
             <div class="flex p-10 font-familjen text-2xl">
-                <!-- <div class="flex flex-col"> -->
-                <Accordion class="w-3/4">
-                    <AccordionItem
-                        open
-                        classActive="bg-inherit"
-                        inactiveClass="hover:bg-inherit"
-                    >
-                        <span slot="header">Ceramics</span>
-                        <p>
-                            Inca pottery was crafted using natural clay with
-                            added materials like mica and sand to prevent
-                            cracking during firing.
-                        </p>
-                    </AccordionItem>
-                    <AccordionItem
-                        classActive="bg-inherit"
-                        inactiveClass="hover:bg-inherit"
-                    >
-                        <span slot="header">Metalworks</span>
-                        <p>
-                            Inca metalwork, reserved for nobles, used gold,
-                            silver, copper in objects like jewelry, ceremonial
-                            knives, and figurines.
-                        </p>
-                    </AccordionItem>
-                    <AccordionItem
-                        classActive="bg-inherit"
-                        inactiveClass="hover:bg-inherit"
-                    >
-                        <span slot="header">Textiles</span>
-                        <p>
-                            Inca textiles, preserved in the Andean highlands,
-                            symbolized wealth, status, and were more prized than
-                            gold or silver.
-                        </p>
-                    </AccordionItem>
-                </Accordion>
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <!-- svelte-ignore a11y-no-static-element-interactions -->
+                <div class="w-3/4" on:click={changeItem}>
+                    <Accordion flush>
+                        <AccordionItem
+                            bind:open={ceramicOpen}
+                            classActive="bg-inherit"
+                            inactiveClass="hover:bg-inherit"
+                        >
+                            <span slot="header">Ceramics</span>
+                            <p>
+                                Inca pottery was crafted using natural clay with
+                                added materials like mica and sand to prevent
+                                cracking during firing.
+                            </p>
+                        </AccordionItem>
+                        <AccordionItem
+                            bind:open={metalworkOpen}
+                            classActive="bg-inherit"
+                            inactiveClass="hover:bg-inherit"
+                        >
+                            <span slot="header">Metalworks</span>
+                            <p>
+                                Inca metalwork, reserved for nobles, used gold,
+                                silver, copper in objects like jewelry,
+                                ceremonial knives, and figurines.
+                            </p>
+                        </AccordionItem>
+                        <AccordionItem
+                            bind:open={textilesOpen}
+                            classActive="bg-inherit"
+                            inactiveClass="hover:bg-inherit"
+                        >
+                            <span slot="header">Textiles</span>
+                            <p>
+                                Inca textiles, preserved in the Andean
+                                highlands, symbolized wealth, status, and were
+                                more prized than gold or silver.
+                            </p>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
                 <div class="w-1/2">
                     <Carousel {images} let:Controls duration={3000}>
                         <Controls />

@@ -19,7 +19,7 @@
         { name: "Government", image: gov, to: "/government" },
         { name: "Architecture", image: archi, to: "/architecture" },
         { name: "Road Structure", image: road, to: "/architecture" },
-        { name: "Food & Agriculture", image: food, to: "/architecture" },
+        { name: "Food & Agriculture", image: food, to: "/agriculture" },
         { name: "Beliefs", image: beliefs, to: "/culture" },
         { name: "Social Structure", image: social, to: "/culture" },
         { name: "Art", image: art, to: "/" },

@@ -3,9 +3,10 @@
     import culture from "../assets/culture/Culture.png";
     import { headerBg } from "../stores/header";
     import { onDestroy, onMount } from "svelte";
-    import Carousel from "svelte-carousel/src/components/Carousel/Carousel.svelte";
     import { Button } from "flowbite-svelte";
     import { Link } from "svelte-routing";
+    import { cultureY } from "../stores/culture";
+    import Footer from "../lib/Footer.svelte";
 
     $headerBg = "#DBFDD8";
     onMount(() => {
@@ -15,15 +16,17 @@
             document.body.style.backgroundColor = past;
         };
     });
+    onDestroy(() => ($cultureY = window.scrollY));
+    onMount(() => scrollTo(0, $cultureY));
 
     let cards = [
         {
             desc: "Uncover the Inca's divine world, where Viracocha the creator, Inti the sun god, and Pacha Mama, the Earth Mother, shaped life. Gods of thunder, the moon, and more ruled their universe, blending nature with the sacred.",
-            to: "/",
+            to: "/gods",
         },
         {
             desc: "The Inca believed humans shared the world with gods, ancestors, and nature's spirits. To thrive, they offered gifts like food and beer to maintain harmony. Their religion emphasized living in balance with nature and Pachamama, the Earth Mother.",
-            to: "/",
+            to: "/agriculture",
         },
         {
             desc: "Inca priests used divination to heal, solve crimes, and predict war, often with animal sacrifices. Mummified emperors, revered as sacred, were honored in ceremonies alongside their treasures of gold and silver.",
@@ -110,23 +113,18 @@
     </div>
     <div class="mr-auto text-[#DBFDD8]">
         <p>{cards[2].desc}</p>
-        <Link to={cards[2].to}>
-            <Button
-                class="bg-[#A1EF7A] hover:bg-green-400 text-[#33814F] text-[1.5vw] rounded-full px-14 py-3 w-min ml-auto text-nowrap"
-                >Learn More</Button
-            >
-        </Link>
     </div>
     <div class="mr-auto text-[#DBFDD8]" style="width: 66%;">
         <p>{cards[3].desc}</p>
-        <Link to={cards[3].to}>
-            <Button
-                class="bg-[#A1EF7A] hover:bg-green-400 text-[#33814F] text-[1.5vw] rounded-full px-14 py-3 w-min ml-auto text-nowrap"
-                >Learn More</Button
-            >
-        </Link>
     </div>
 </div>
+<Footer
+    bgColor="#5A9E6F"
+    textColor="#DBFDD8"
+    color1="#E9FFE6"
+    color2="#C5EABB"
+    color3="#D0F5CB"
+/>
 
 <style>
     .par > div {

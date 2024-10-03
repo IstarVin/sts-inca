@@ -40,7 +40,7 @@ export default {
                 textColor: '#EDEDED'
             },
             screens: {
-                '3xl': '1900px'
+                '3xl': '1700px'
             }
         },
     },

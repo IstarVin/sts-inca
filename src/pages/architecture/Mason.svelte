@@ -8,6 +8,8 @@
     import arch2 from "../../assets/acrhitecture/arch2.png";
     import arch3 from "../../assets/acrhitecture/arch3.png";
     import arch4 from "../../assets/acrhitecture/arch4.png";
+    import pic1 from "../../assets/acrhitecture/1st frame above.png";
+    import pic2 from "../../assets/acrhitecture/2nd frame above.png";
     import youtubeIcon from "../../assets/acrhitecture/youtube.png";
 
     let images = [arch1, arch2, arch3, arch4];
@@ -41,11 +43,16 @@
             </h1>
             <hr class="border-t border-gray-300 my-6 mx-4" />
         </div>
-        <div class="flex gap-10">
-            <div class="bg-stone-800 w-full"></div>
-            <div class="w-[150%]">
-                <p class="text-gray-100 text-lg">
-                    The <b class="font-extrabold">Incas</b> constructed large
+        <div class="flex gap-0 items-center">
+            <!-- <div class="bg-stone-800 w-full"></div> -->
+            <div class="flex flex-col w-full">
+                <img src={pic1} alt="" />
+                <img src={pic2} alt="" />
+            </div>
+            <div class="ml-20">
+                <hr class="border-t border-gray-300 my-6 mx-4" />
+                <p class="text-gray-100 text-2xl font-light">
+                    The <b class="font-bold">Incas</b> constructed large
                     buildings, walls and fortifications using finely worked
                     blocks either regular or polygonal which fitted together so
                     precisely no mortar was needed With an emphasis on clean

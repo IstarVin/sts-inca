@@ -10,6 +10,9 @@
     import Mason from "./pages/architecture/Mason.svelte";
     import LostCity from "./pages/architecture/LostCity.svelte";
     import RoadSystems from "./pages/architecture/RoadSystems.svelte";
+    import Gods from "./pages/culture/Gods.svelte";
+    import GovStruct from "./pages/government/GovStruct.svelte";
+    import Agriculture from "./pages/culture/Agriculture.svelte";
 </script>
 
 <Background />
@@ -24,5 +27,8 @@
         <Route path="/mason" component={Mason} />
         <Route path="/lostcity" component={LostCity} />
         <Route path="/roadsystems" component={RoadSystems} />
+        <Route path="/gods" component={Gods} />
+        <Route path="/structure" component={GovStruct} />
+        <Route path="/agriculture" component={Agriculture} />
     </main>
 </Router>

@@ -80,7 +80,7 @@
             class="w-full flex justify-between items-center"
             style="color:{textColor}"
         >
-            <h1 class="">in fullfilment in the subject of sir romnick</h1>
+            <h1 class="">in fullfilment of the subject of sir romnick</h1>
             <div class="flex flex-col items-end">
                 <h1>Mindanao State University</h1>
                 <h1>Group Inca</h1>

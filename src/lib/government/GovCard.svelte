@@ -11,6 +11,7 @@
 <div
     class="w-[25vw] aspect-video rounded-3xl bg-contain bg-no-repeat bg-center hover:cursor-pointer overflow-hidden font-labrada"
     style="background-image: url({img});"
+    on:click={() => (clicked = !clicked)}
     on:mouseenter={() => (clicked = true)}
     on:mouseleave={() => (clicked = false)}
 >
@@ -25,7 +26,7 @@
         {name}
     </div>
     <div
-        class="w-full h-full bg-black bg-opacity-15 transition duration-500 flex items-center justify-center text-white px-16 text-2xl"
+        class="w-full h-full bg-black bg-opacity-15 transition duration-500 flex items-center justify-center text-white px-16 text-[1.1vw]"
         style={clicked
             ? "transform: translateY(-100%)"
             : "transform: translateY(0)"}
